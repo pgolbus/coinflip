@@ -5,21 +5,22 @@ coinflip -*- mode: org -*-
 * coinflip/
 ** coinflip/
 *** \under{}\under{}init\under{}\under{}.py
-**** CoinflipResult (namedtuple)
-**** CoinflipConfig (namedtuple)
+**** CoinflipResult
+**** CoinflipConfig
+**** ViewConfig
 *** coinflip\under{}controller.py
-**** flip\under{}a\under{}coin(model, \ast{}\ast{}model\under{}args) -> CoinflipResult
+**** flip\under{}a\under{}coin(model, ModelConfig, ViewConfig) -> CoinflipResult
 *** coinflip\under{}models/
 **** \under{}\under{}init\under{}\under{}.py
 ***** COINFLIPS ({str: module})
 **** base\under{}model.py
-***** build\under{}config(\ast{}\ast{}model\under{}args) -> CoinflipConfig
-***** the\under{}ask(CoinflipConfig) -> [float]
+***** ModelConfig
+***** the\under{}ask(ModelConfig, CoinflipConfig) -> [float]
 ***** the\under{}answer([float]) -> CoinflipResult
 **** iching\under{}model.py; side-effects
 **** uniform\under{}model.py
 *** coinflip\under{}view.py
-**** render\under{}coinflip\under{}representation(CoinflipResult) -> None; side-effects
+**** render\under{}coinflip\under{}representation(CoinflipResult, ViewConfig) -> None; side-effects
 *** random\under{}org\under{}dao.py
 **** format\under{}url(CoinflipConfig) -> str
 **** make\under{}request(url) --> requests.get()
@@ -30,6 +31,7 @@ coinflip -*- mode: org -*-
 *** test\under{}coinflip\under{}view.py
 *** test\under{}coinflip\under{}models.py
 **** test\under{}iching\under{}model() 
+**** test\under{}bernoulli\under{}model() 
 ** setup.py
 *** requirements
 **** requests
