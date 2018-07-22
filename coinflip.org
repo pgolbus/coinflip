@@ -7,13 +7,13 @@ coinflip -*- mode: org -*-
 *** \under{}\under{}init\under{}\under{}.py
 *** controller.py
 **** config\under{}builder([str]) -> Config
-**** flip\under{}a\under{}coin(model, CoinflipConfig, ViewConfig)
+**** coinflip(model, CoinflipConfig, ViewConfig)
 -> CoinflipResult; side-effects
 *** models/
 **** \under{}\under{}init\under{}\under{}.py
 ***** COINFLIPS ({str: module})
 **** base\under{}model.py
-***** flip\under{}the\under{}coin(CoinflipConfig) -> [float]
+***** flip\under{}the\under{}coins(CoinflipConfig) -> [float]
 ***** build\under{}result([float]) -> CoinflipResult
 **** iching\under{}model.py; side-effects
 **** bernoulli\under{}model.py
@@ -26,7 +26,8 @@ coinflip -*- mode: org -*-
 **** LoggerConfig
 **** CoinflipResult
 *** view.py
-**** render\under{}coinflip\under{}representation(CoinflipResult, ViewConfig)
+**** render\under{}coinflip\under{}representation(CoinflipResult,
+                               ViewConfig)
 -> None; side-effects
 *** random\under{}org\under{}dao.py
 **** format\under{}url(CoinflipConfig) -> str
@@ -34,9 +35,7 @@ coinflip -*- mode: org -*-
 **** read\under{}request(requests.get()) -> [float]
 *** logger.py
 **** configure\under{}logger(LoggerConfig) -> None; side-effects
-**** One of these I have to look it up
-***** get\under{}logger() -> Logger
-***** Logger
+**** Logger
 ** tests/
 *** test\under{}random\under{}org\under{}dao\under{}integration.py
 *** test\under{}coinflip\under{}view.py
