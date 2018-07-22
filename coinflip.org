@@ -1,0 +1,50 @@
+coinflip -*- mode: org -*-
+#+STARTUP: indent
+#+STARTUP: entitiespretty
+
+* coinflip/
+** coinflip/
+*** \under{}\under{}init\under{}\under{}.py
+*** controller.py
+**** config\under{}builder([str]) -> Config
+**** coinflip(model, CoinflipConfig, ViewConfig)
+-> CoinflipResult; side-effects
+*** models/
+**** \under{}\under{}init\under{}\under{}.py
+***** COINFLIPS ({str: module})
+**** base\under{}model.py
+***** flip\under{}the\under{}coins(CoinflipConfig) -> [float]
+***** build\under{}result([float]) -> CoinflipResult
+**** iching\under{}model.py; side-effects
+**** bernoulli\under{}model.py
+*** configs/
+**** \under{}\under{}init\under{}\under{}.py
+***** CONFIGS ({str: module})
+**** BaseConfig
+**** CoinflipConfig
+**** ViewConfig
+**** LoggerConfig
+**** CoinflipResult
+*** view.py
+**** render\under{}coinflip\under{}representation(CoinflipResult,
+                               ViewConfig)
+-> None; side-effects
+*** random\under{}org\under{}dao.py
+**** format\under{}url(CoinflipConfig) -> str
+**** make\under{}request(url) -> requests.get()
+**** read\under{}request(requests.get()) -> [float]
+*** logger.py
+**** configure\under{}logger(LoggerConfig) -> None; side-effects
+**** Logger
+** tests/
+*** test\under{}random\under{}org\under{}dao\under{}integration.py
+*** test\under{}coinflip\under{}view.py
+*** test\under{}coinflip\under{}models.py
+**** test\under{}iching\under{}model()
+**** test\under{}bernoulli\under{}model()
+** setup.py
+*** requirements
+**** requests
+** requirements.lock
+*** pytest
+*** mock
