@@ -7,3 +7,7 @@ CoinflipResult = namedtuple(
 CoinflipConfig = namedtuple(
     'CoinflipConfig',
     [])
+
+ViewConfig = namedtuple(
+    'ViewConfig',
+    [])

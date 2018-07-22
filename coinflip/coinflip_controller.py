@@ -1,7 +1,7 @@
 from coinflip_models import COINFLIPS
 from coinflip_view import render_coinflip
 
-def flip_a_coin(model, coinflip_config, test=False):
+def flip_a_coin(model, ModelConfig, ViewConfig):
     '''Flip a coin according to a distribution model
 
     Args:

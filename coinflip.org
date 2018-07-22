@@ -5,11 +5,14 @@ coinflip -*- mode: org -*-
 * coinflip/
 ** coinflip/
 *** \under{}\under{}init\under{}\under{}.py
-**** CoinflipResult
 **** CoinflipConfig
 **** ViewConfig
+**** ParameterConfig
+**** CoinflipResult
 *** coinflip\under{}controller.py
-**** flip\under{}a\under{}coin(model, ModelConfig, ViewConfig) -> CoinflipResult
+**** config\under{}builder([str]) -> Config 
+**** flip\under{}a\under{}coin(CoinflipConfig, model, ParameterConfig, ViewConfig)  
+-> CoinflipResult
 *** coinflip\under{}models/
 **** \under{}\under{}init\under{}\under{}.py
 ***** COINFLIPS ({str: module})
@@ -19,6 +22,9 @@ coinflip -*- mode: org -*-
 ***** the\under{}answer([float]) -> CoinflipResult
 **** iching\under{}model.py; side-effects
 **** uniform\under{}model.py
+*** parameter\under{}models/
+***** \under{}\under{}init\under{}\under{}.py
+****** MODEL\under{}PARAMS ({str: [module]})
 *** coinflip\under{}view.py
 **** render\under{}coinflip\under{}representation(CoinflipResult, ViewConfig) -> None; side-effects
 *** random\under{}org\under{}dao.py
