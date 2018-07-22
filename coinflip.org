@@ -3,6 +3,7 @@ coinflip -*- mode: org -*-
 #+STARTUP: entitiespretty
 
 * coinflip/
+** README.md
 ** coinflip/
 *** \under{}\under{}init\under{}\under{}.py
 *** controller.py
