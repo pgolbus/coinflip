@@ -5,27 +5,26 @@ coinflip -*- mode: org -*-
 * coinflip/
 ** coinflip/
 *** \under{}\under{}init\under{}\under{}.py
-**** CoinflipConfig
-**** ViewConfig
-**** ParameterConfig
+*** controller.py
 **** CoinflipResult
-*** coinflip\under{}controller.py
-**** config\under{}builder([str]) -> Config 
-**** flip\under{}a\under{}coin(CoinflipConfig, model, ParameterConfig, ViewConfig)  
+**** config\under{}builder([str]) -> Config
+**** flip\under{}a\under{}coin(model, CoinflipConfig, ViewConfig)
 -> CoinflipResult
-*** coinflip\under{}models/
+*** models/
 **** \under{}\under{}init\under{}\under{}.py
 ***** COINFLIPS ({str: module})
 **** base\under{}model.py
-***** ModelConfig
-***** the\under{}ask(ModelConfig, CoinflipConfig) -> [float]
-***** the\under{}answer([float]) -> CoinflipResult
+***** flip\under{}a\under{}coin(CoinflipConfig) -> [float]
+***** build\under{}result([float], CoinflipConfig) -> CoinflipResult
 **** iching\under{}model.py; side-effects
 **** uniform\under{}model.py
-*** parameter\under{}models/
-***** \under{}\under{}init\under{}\under{}.py
-****** MODEL\under{}PARAMS ({str: [module]})
-*** coinflip\under{}view.py
+*** configs/
+**** \under{}\under{}init\under{}\under{}.py
+***** CONFIGS ({str: module})
+**** BaseConfig
+**** CoinflipConfig
+**** ViewConfig
+*** view.py
 **** render\under{}coinflip\under{}representation(CoinflipResult, ViewConfig) -> None; side-effects
 *** random\under{}org\under{}dao.py
 **** format\under{}url(CoinflipConfig) -> str
@@ -36,8 +35,8 @@ coinflip -*- mode: org -*-
 *** test\under{}random\under{}org\under{}dao\under{}integration.py
 *** test\under{}coinflip\under{}view.py
 *** test\under{}coinflip\under{}models.py
-**** test\under{}iching\under{}model() 
-**** test\under{}bernoulli\under{}model() 
+**** test\under{}iching\under{}model()
+**** test\under{}bernoulli\under{}model()
 ** setup.py
 *** requirements
 **** requests
